@@ -81,13 +81,18 @@ public class IntList {
      */
     // destructive
     public static IntList dcatenate(IntList A, IntList B) {
-        IntList temp = A;
-        while(temp.rest != null)
-        {
-            temp = temp.rest;
+        IntList res = A;
+        if (A == null) {
+            return B;
+        } else if (B == null) {
+            return A;
+        } else {
+            while (A.rest != null) {
+                A = A.rest;
+            }
+            A.rest = B;
         }
-        temp.rest = B;
-        return A;
+        return res;
     }
 
 
@@ -99,19 +104,23 @@ public class IntList {
     // Non-destructive
 
     public static IntList catenate(IntList A, IntList B) {
-        IntList newList = new IntList(A.first, null);
-        IntList temp1 = A;
-        IntList temp2 = newList;
-        while(temp1.rest != null)
-        {
-            temp1 = temp1.rest;
-            temp2.rest = new IntList(temp1.first, null);
-            temp2 = temp2.rest;
+        IntList res = new IntList();
+        IntList ptr = res;
+        if (A == null && B == null) {
+            return null;
         }
-
-        temp2.rest = B;
-
-        return newList;
+        while (A != null || B != null) {
+            if (A != null) {
+                ptr.rest = new IntList(A.first, null);
+                ptr = ptr.rest;
+                A = A.rest;
+            } else if (B != null) {
+                ptr.rest = new IntList(B.first, null);
+                ptr = ptr.rest;
+                B = B.rest;
+            }
+        }
+        return res.rest;
     }
 
 
