@@ -31,7 +31,7 @@ public class Planet {
 	}
 
 
-	final static double gravity =  6.67e-11; // set gravity constant
+	private final static double gravity =  6.67e-11; // set gravity constant
 	public double calcForceExertedBy(Planet p){
 		return gravity*(p.mass*mass)/(calcDistance(p)*calcDistance(p));
 	}
