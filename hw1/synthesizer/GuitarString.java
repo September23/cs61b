@@ -10,9 +10,9 @@ public class GuitarString {
 
     /* Create a guitar string of the given frequency.  */
     public GuitarString(double frequency) {
-        int capacity = (int) Math.round(SR/frequency);
+        int capacity = (int) Math.round(SR / frequency);
         buffer = new ArrayRingBuffer<>(capacity);
-        for(int i=0; i<capacity; i+=1){
+        for (int i = 0; i < capacity; i += 1) {
             buffer.enqueue(0.0);
         }
     }
@@ -20,7 +20,7 @@ public class GuitarString {
 
     /* Pluck the guitar string by replacing the buffer with white noise. */
     public void pluck() {
-        for(int i=0; i<buffer.capacity(); i+=1){
+        for (int i = 0; i < buffer.capacity(); i += 1) {
             double r = Math.random() - 0.5;
             buffer.dequeue();
             buffer.enqueue(r);
@@ -34,7 +34,7 @@ public class GuitarString {
 
         double front = buffer.dequeue();
         double secondfront = buffer.peek();
-        double average = DECAY*(front + secondfront)/2;
+        double average = DECAY * (front + secondfront) / 2;
         buffer.enqueue(average);
     }
 

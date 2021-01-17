@@ -23,7 +23,7 @@ public interface BoundedQueue<T> extends Iterable<T> {
 
 
     default boolean isFull() {
-        if (fillCount() == capacity()){
+        if (fillCount() == capacity()) {
             return true;
         }
         return false;
