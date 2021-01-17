@@ -11,11 +11,11 @@ public class IntList {
     /**
      * First element of list.
      */
-    public int first;
+    int first;
     /**
      * Remaining elements of list.
      */
-    public IntList rest;
+    IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
@@ -34,7 +34,7 @@ public class IntList {
     }
 
     // Reverse method
-    public static IntList reverse(IntList A){
+    public static IntList reverse(IntList A) {
         if (A == null) {
             return null;
         }

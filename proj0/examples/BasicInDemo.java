@@ -18,5 +18,7 @@ public class BasicInDemo {
 		System.out.println("The file contained "  + firstItemInFile + ", " + 
 			               secondItemInFile + ", " + thirdItemInFile + ", " +
 			               fourthItemInFile + ", and " + fifthItemInFile);
+
+		// Output is ""The file contained 5, 9.0, ketchup, brass, and 5.0""
 	}
 } 

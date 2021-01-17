@@ -1,6 +1,6 @@
 public class NBody {
     @Deprecated
-    public static double readRadius(String filepath){
+    public static double readRadius(String filepath) {
         In in = new In(filepath);
         int planetsnumbers = in.readInt();
         double radiusofuniverse = in.readDouble();
